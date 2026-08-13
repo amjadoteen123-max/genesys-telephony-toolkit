@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Genesys Telephony Toolkit</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#172033}
+.app{display:flex;min-height:100vh}.side{width:240px;background:#111827;color:#fff;padding:22px 14px;position:fixed;inset:0 auto 0 0}
+.logo{display:flex;gap:10px;align-items:center;margin:5px 8px 28px;font-weight:800}.g{background:#ff4f1f;width:38px;height:38px;border-radius:11px;display:grid;place-items:center}
+.nav{width:100%;border:0;background:transparent;color:#cbd5e1;text-align:left;padding:11px;border-radius:8px;margin:2px 0}.nav:hover,.nav.active{background:#ffffff12;color:#fff}
+.main{margin-left:240px;width:calc(100% - 240px)}.top{height:68px;background:white;border-bottom:1px solid #e5e9ef;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.status{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px}.red{width:9px;height:9px;border-radius:50%;background:#ef4444}
+.content{padding:28px}.hero{display:flex;justify-content:space-between;margin-bottom:22px}.hero h1{margin:0 0 7px;font-size:27px}.hero p{margin:0;color:#667085;font-size:13px}
+.btn{padding:9px 13px;border:1px solid #d8dee8;background:#fff;border-radius:8px;font-weight:700;font-size:12px;margin-left:7px}.primary{background:#ff4f1f;color:white;border-color:#ff4f1f}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card,.panel{background:white;border:1px solid #e5e9ef;border-radius:12px}.card{padding:18px}
+.label{font-size:11px;color:#667085;font-weight:700}.num{font-size:28px;font-weight:800;margin-top:12px;color:#98a2b3}.green{color:#667085;font-size:11px;margin-top:5px}
+.grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-top:16px}.head{padding:15px 17px;border-bottom:1px solid #e5e9ef;font-weight:800;font-size:13px}.body{padding:16px}
+.row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #eef1f4;font-size:12px}.pill{padding:4px 8px;border-radius:99px;background:#f2f4f7;color:#667085;font-size:10px;font-weight:800}
+.login{max-width:650px;margin:55px auto;background:#fff;border:1px solid #e5e9ef;border-radius:16px;padding:35px;text-align:center;box-shadow:0 8px 30px #1b2a3a0a}.login h2{margin:0 0 10px}.login p{color:#667085;font-size:13px;line-height:1.6}.login .btn{margin:15px 0 0}
+.note{margin-top:16px;font-size:11px;color:#98a2b3}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}}@media(max-width:650px){.side{width:68px}.side span{display:none}.main{margin-left:68px;width:calc(100% - 68px)}.content{padding:18px}.hero{display:block}.cards{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+<div class="logo"><div class="g">G</div><span>Genesys Telephony<br><small>Administration Toolkit</small></span></div>
+<button class="nav active">▦ <span>Dashboard</span></button>
+<button class="nav">▣ <span>Edges</span></button>
+<button class="nav">◈ <span>Trunks</span></button>
+<button class="nav">▤ <span>Sites</span></button>
+<button class="nav">▦ <span>Edge Groups</span></button>
+<button class="nav">≡ <span>Number Plans</span></button>
+<button class="nav">⇄ <span>Outbound Routes</span></button>
+<button class="nav">⇔ <span>Compare</span></button>
+<button class="nav">▣ <span>Backup</span></button>
+</aside>
+<main class="main">
+<header class="top">
+<span>Telephony Toolkit / <b>Dashboard</b></span>
+<div class="status"><span class="red"></span>Not Connected</div>
+</header>
+<div class="content">
+<div class="hero">
+<div><h1>Telephony Overview</h1><p>Connect your Genesys Cloud organization to manage telephony configuration.</p></div>
+</div>
+
+<div class="login">
+<h2>Connect to Genesys Cloud</h2>
+<p>You are not connected to a Genesys Cloud organization. Sign in with Genesys Cloud OAuth to load your real Edges, Trunks, Sites and routing configuration.</p>
+<button class="btn primary" onclick="alert('OAuth is the next step. First create the Genesys Cloud OAuth client; then we will connect this button to the secure callback.')">Connect to Genesys Cloud</button>
+<div class="note">Demo data is disabled in this version. No Genesys password is stored by this website.</div>
+</div>
+
+<div class="cards">
+<div class="card"><div class="label">Edges</div><div class="num">—</div><div class="green">Not connected</div></div>
+<div class="card"><div class="label">External Trunks</div><div class="num">—</div><div class="green">Not connected</div></div>
+<div class="card"><div class="label">Sites</div><div class="num">—</div><div class="green">Not connected</div></div>
+<div class="card"><div class="label">Outbound Routes</div><div class="num">—</div><div class="green">Not connected</div></div>
+</div>
+
+<div class="grid">
+<div class="panel"><div class="head">Connection Status</div><div class="body">
+<div class="row"><span>Genesys Cloud OAuth</span><span class="pill">Not configured</span></div>
+<div class="row"><span>Organization</span><span class="pill">—</span></div>
+<div class="row"><span>User</span><span class="pill">—</span></div>
+</div></div>
+<div class="panel"><div class="head">Next Step</div><div class="body">
+<p style="font-size:12px;color:#667085;line-height:1.6">Create the OAuth Client in Genesys Cloud. After that, we will add the secure server-side OAuth callback and connect the button above.</p>
+</div></div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>
